@@ -1,9 +1,8 @@
-<script context="module" lang="ts">
+<script context="module">
 	import { enhance } from '$lib/form';
-	import type { Load } from '@sveltejs/kit';
 
 	// see https://kit.svelte.dev/docs#loading
-	export const load: Load = async ({ fetch }) => {
+	export const load = async ({ fetch }) => {
 		const res = await fetch('/todos.json');
 
 		if (res.ok) {
@@ -22,21 +21,13 @@
 	};
 </script>
 
-<script lang="ts">
+<script>
 	import { scale } from 'svelte/transition';
 	import { flip } from 'svelte/animate';
 
-	type Todo = {
-		uid: string;
-		created_at: Date;
-		text: string;
-		done: boolean;
-		pending_delete: boolean;
-	};
+	export let todos;
 
-	export let todos: Todo[];
-
-	async function patch(res: Response) {
+	async function patch(res) {
 		const todo = await res.json();
 
 		todos = todos.map((t) => {

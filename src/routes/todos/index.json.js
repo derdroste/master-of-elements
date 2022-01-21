@@ -1,9 +1,7 @@
 import { api } from './_api';
-import type { RequestHandler } from '@sveltejs/kit';
-import type { Locals } from '$lib/types';
 
 // GET /todos.json
-export const get: RequestHandler<Locals> = async (event) => {
+export const get = async (event) => {
 	// event.locals.userid comes from src/hooks.js
 	const response = await api(event, `todos/${event.locals.userid}`);
 
@@ -17,7 +15,7 @@ export const get: RequestHandler<Locals> = async (event) => {
 };
 
 // POST /todos.json
-export const post: RequestHandler<Locals> = async (event) => {
+export const post = async (event) => {
 	const data = await event.request.formData();
 
 	const response = await api(event, `todos/${event.locals.userid}`, {
