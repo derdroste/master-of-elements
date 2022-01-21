@@ -1,33 +1,21 @@
 {
-  "name": "master-o-e",
-  "version": "0.0.1",
+  "name": "masters-of-elements-2",
+  "version": "1.0.0",
+  "private": true,
   "scripts": {
-    "dev": "svelte-kit dev",
-    "build": "svelte-kit build",
-    "start": "node build/index.js",
-    "package": "svelte-kit package",
-    "preview": "svelte-kit preview",
-    "check": "svelte-check --tsconfig ./tsconfig.json",
-    "check:watch": "svelte-check --tsconfig ./tsconfig.json --watch"
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@nuxtjs/pwa": "^3.3.5",
+    "core-js": "^3.15.1",
+    "nuxt": "^2.15.7"
   },
   "devDependencies": {
-    "@sveltejs/adapter-auto": "next",
-    "@sveltejs/kit": "next",
-    "@types/cookie": "^0.4.1",
-    "svelte": "^3.44.0",
-    "svelte-check": "^2.2.6",
-    "svelte-preprocess": "^4.9.4",
-    "tslib": "^2.3.1",
-    "typescript": "^4.4.3"
-  },
-  "type": "module",
-  "dependencies": {
-    "@fontsource/fira-mono": "^4.5.0",
-    "@lukeed/uuid": "^2.0.0",
-    "@sveltejs/adapter-node": "^1.0.0-next.66",
-    "cookie": "^0.4.1"
-  },
-  "engines": {
-    "node": "14.17.0"
+    "@nuxt/types": "^2.15.7",
+    "@nuxt/typescript-build": "^2.1.0",
+    "nuxt-windicss": "^1.1.1"
   }
 }
