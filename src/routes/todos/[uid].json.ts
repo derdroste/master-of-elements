@@ -1,7 +1,9 @@
 import { api } from './_api';
+import type { RequestHandler } from '@sveltejs/kit';
+import type { Locals } from '$lib/types';
 
 // PATCH /todos/:uid.json
-export const patch = async (event) => {
+export const patch: RequestHandler<Locals> = async (event) => {
 	const data = await event.request.formData();
 
 	return api(event, `todos/${event.locals.userid}/${event.params.uid}`, {
@@ -11,6 +13,6 @@ export const patch = async (event) => {
 };
 
 // DELETE /todos/:uid.json
-export const del = async (event) => {
+export const del: RequestHandler<Locals> = async (event) => {
 	return api(event, `todos/${event.locals.userid}/${event.params.uid}`);
 };
