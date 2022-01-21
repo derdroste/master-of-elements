@@ -3,9 +3,11 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "svelte-kit dev",
-    "build": "svelte-kit build",
+    "build": "npm install && npm run build-local",
+    "build-local": "svelte-kit build",
     "package": "svelte-kit package",
-    "preview": "svelte-kit preview"
+    "preview": "svelte-kit preview",
+    "start": "node build/index.js"
   },
   "devDependencies": {
     "@sveltejs/adapter-auto": "next",
